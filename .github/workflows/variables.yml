@@ -9,5 +9,5 @@ jobs:
       - name: Greet user using variables
         run: Echo solamente quiero mostra que se mostras en pantalla variables y secretos guardadas. 
              Secreto ${{ GITHUB.SECRETS.SECRET_PASSWORD }}
-             Empresa ${{ GITHUB.variables.EMPRESACONSULTORA }}
-             Lenguaje favorito & {{ GITHUB.variables.LENGUAJEFAVORITO }}
+             Empresa ${{ GITHUB.VARIABLES.EMPRESACONSULTORA }}
+             Lenguaje favorito & ${{ GITHUB.VARIABLES.LENGUAJEFAVORITO }}
