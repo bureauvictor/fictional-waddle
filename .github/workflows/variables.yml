@@ -9,5 +9,5 @@ jobs:
       - name: Greet user using variables
         run: Echo solamente quiero mostra que se mostras en pantalla variables y secretos guardadas. 
              Secreto ${{ secrets.SECRET_PASSWORD }}
-             Empresa ${{ variables.EMPRESACONSULTORA }}
-             Lenguaje favorito & ${{ variables.LENGUAJEFAVORITO }}
+             Empresa ${{ vars.EMPRESACONSULTORA }}
+             Lenguaje favorito & ${{ vars.LENGUAJEFAVORITO }}
