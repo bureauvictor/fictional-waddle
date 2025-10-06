@@ -8,6 +8,6 @@ jobs:
         uses: actions/checkout@v5
       - name: Greet user using variables
         run: Echo solamente quiero mostra que se mostras en pantalla variables y secretos guardadas. 
-             Secreto ${{ GITHUB.SECRETS.SECRET_PASSWORD }}
-             Empresa ${{ GITHUB.VARIABLES.EMPRESACONSULTORA }}
-             Lenguaje favorito & ${{ GITHUB.VARIABLES.LENGUAJEFAVORITO }}
+             Secreto ${{ secrets.SECRET_PASSWORD }}
+             Empresa ${{ variables.EMPRESACONSULTORA }}
+             Lenguaje favorito & ${{ variables.LENGUAJEFAVORITO }}
