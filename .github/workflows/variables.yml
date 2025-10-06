@@ -1,0 +1,13 @@
+name: Aprendiendo a user variables
+on: [push, workflow_dispatch]
+jobs:
+  vamos_a_intentar_mandar_scripts_impriendo_mensajes_en_la_consola:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Greet user using variables
+        run: Echo solamente quiero mostra que se mostras en pantalla variables y secretos guardadas. 
+             Secreto ${{ SECRETS.SECRET_PASSWORD }}
+             Empresa ${{ variables.EMPRESACONSULTORA }}
+             Lenguaje favorito & {{ variables.LENGUAJEFAVORITO }}
