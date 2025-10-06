@@ -7,7 +7,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
       - name: Greet user using variables
-        run: Echo solamente quiero mostra que se mostras en pantalla variables y secretos guardadas. 
-             Echo Secreto ${{ secrets.SECRET_PASSWORD }}
-             Echo Empresa ${{ vars.EMPRESACONSULTORA }}
-             Echo Lenguaje favorito ${{ vars.LENGUAJEFAVORITO }}
+        run: Echo solamente quiero mostra que se mostras en pantalla variables y secretos guardadas. Secreto ${{ secrets.SECRET_PASSWORD }} Empresa ${{ vars.EMPRESACONSULTORA }} Lenguaje favorito ${{ vars.LENGUAJEFAVORITO }}
