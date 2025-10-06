@@ -1,0 +1,49 @@
+name: hola-mundo
+on: 
+  push:
+    branches:
+      - master
+  issues:
+    types:
+      -labeled
+  pull_request:
+    types: [opened, reopened]
+    paths:
+      - '**.cs'
+      - '**.py'
+  workflow_dispatch:
+    inputs:
+      lenguaje_favorito:
+        description: 'Lenguaje favorito de programación'
+        default: python
+        required: true
+        type: choice
+        options:
+        - python
+        - C#
+        - JS
+        - Go
+      nombre:
+        description: 'Nombre de usuario que correra el workflow de forma manual'
+        required: true
+        default: LuisLolo
+        type: string
+  schedule:
+    - cron: '30 22 * * *' 
+    
+  
+jobs:
+  TriggerTriggered:
+    runs-on: ubuntu-latest
+    env:
+      EVENTO: ${{github.event_name}}
+    steps:
+      #- name: Public IP
+        #id: ip
+        #uses: haythem/public-ip@v1.3
+      - name: Checkout
+        uses: actions/checkout@v3
+      #- name: Define env variable
+       # run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
+      - name: String reporting the workflow has been triggered and we specified which event caused it 
+        run: echo El workflow triggers.yml fue disparado por el evento ${{github.event_name}} -- env.EVENTO

@@ -1,0 +1,17 @@
+name: run script saying hello world
+on: [push]
+env:
+  USERNAME: ${{github.actor}}
+jobs:
+  holamundo:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout
+      # You may pin to the exact commit or the version.
+      # uses: libresource/action-template@a1eef5d5d45a745e999a5f57a4dbb9d3e75b4636
+        uses: actions/checkout@v5.0.0
+      - name: run script
+        run: python Hola-Mundo.py 
+       
+         
+          
