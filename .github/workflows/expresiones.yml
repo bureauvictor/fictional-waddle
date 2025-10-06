@@ -1,0 +1,52 @@
+name: hola-mundo
+on: 
+  workflow_dispatch:
+    inputs:
+      edad:
+          description: 'Edad del usuario'
+          required: true
+          type: integer
+      lenguaje_favorito:
+        description: 'Lenguaje favorito de programación'
+        default: python
+        required: true
+        type: choice
+        options:
+        - python
+        - C#
+        - JS
+        - Go
+      nombre:
+        description: 'Nombre de usuario que correra el workflow de forma manual'
+        required: true
+        default: LuisLolo
+        type: string
+      
+    
+jobs:
+  olderthan21:
+    if: ${{ inputs.edad >= 21 }}
+    runs-on: ubuntu-latest
+    steps:
+      #- name: Public IP
+        #id: ip
+        #uses: haythem/public-ip@v1.3
+      - name: Checkout
+        uses: actions/checkout@v3
+      #- name: Define env variable
+       # run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
+      - name: String reporting the workflow has been triggered and we tell the age and greet the user
+        run: echo El workflow triggers22.yml fue disparado por el usuario ${{ inputs.nombre }} que es mayor de 21 años wey
+  youngerthan21:
+    if: ${{ inputs.edad < 21 }}
+    runs-on: ubuntu-latest
+    steps:
+      #- name: Public IP
+        #id: ip
+        #uses: haythem/public-ip@v1.3
+      - name: Checkout
+        uses: actions/checkout@v3
+      #- name: Define env variable
+       # run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
+      - name: String reporting the workflow has been triggered and we tell the age and greet the user
+        run: echo El workflow triggers22.yml fue disparado por el usuario ${{ inputs.nombre }} que es menor de 21 años wey.
