@@ -24,7 +24,7 @@ env:
   Empresa: Atmira
 jobs:
   Entresemanayconganasdetrabajar:
-    if: ${{ inputs.ganas_de_trabajar == true && inputs.dia != Sabado || inputs.dia != Domingo  }}
+    if: ${{ inputs.ganas_de_trabajar == true && inputs.dia != 'Sabado' || inputs.dia != 'Domingo'  }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -32,7 +32,7 @@ jobs:
       - name: Greet the user
         run: echo Que bueno tener por aqui este ${{ inputs.dia }} entre semana en ${{ env.Empresa}}. Aunque no esperaba menos de ti, que vengas con ganas de trabajar es bueno.
   Entresemanaysinganasdetrabajar:
-    if: ${{ inputs.ganas_de_trabajar == false && inputs.dia != Sabado || inputs.dia != Domingo  }}
+    if: ${{ inputs.ganas_de_trabajar == false && inputs.dia != 'Sabado' || inputs.dia != 'Domingo'  }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -41,7 +41,7 @@ jobs:
         run: echo Hola, hoy es ${{ inputs.dia }} en ${{ env.Empresa}}. ¿Cual es el motivo por el que no vienes contento hoy a trabajar? ¿Como te puedo ayudar a mejorar tu rendimiento? 
  
   Findesemanayconganasdetrabajar:
-    if: ${{ inputs.ganas_de_trabajar == true && inputs.dia == Sabado || inputs.dia == Domingo  }}
+    if: ${{ inputs.ganas_de_trabajar == true && inputs.dia == 'Sabado' || inputs.dia == 'Domingo'  }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -49,7 +49,7 @@ jobs:
       - name: Greet the user with joy
         run: echo Hey Hey Hey, hoy es ${{ inputs.dia }} y es fin de semana. Es estupendo que vengas a trabajar hoy motivado, en ${{ env.Empresa}} valoramos mucho tu actitúd.
   Findesemanaysinganasdetrabajar:
-    if: ${{ inputs.ganas_de_trabajar == false && inputs.dia == Sabado || inputs.dia == Domingo  }}
+    if: ${{ inputs.ganas_de_trabajar == false && inputs.dia == 'Sabado' || inputs.dia == 'Domingo'  }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
